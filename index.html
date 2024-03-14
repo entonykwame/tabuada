@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="Shortcut icon" href="https://cdn.icon-icons.com/icons2/2717/PNG/512/finn_the_human_icon_173830.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+
+<body>
+
+
+    <div id="container">
+        <h2>Gerador de Tabuada</h2>
+        <input type="number" id="numInput" placeholder="Digite um número">
+
+        <button onclick="geradorTabuada()">Gerar Tabuada <img
+                src="https://icon-library.com/images/finn-icon/finn-icon-11.jpg" alt="icone do finn"
+                alt="icon do finn"></button>
+
+        <div id="tabuada"></div>
+    </div>
+
+
+    <script>
+        function geradorTabuada() {
+            var numInput = document.getElementById("numInput").value;
+            var tabuadaDiv = document.getElementById("tabuada");
+            tabuadaDiv.innerHTML = "";
+
+
+            if (!numInput || isNaN(numInput)) {
+                tabuadaDiv.innerHTML = "<p>Por favor, insira um número válido.</p>";
+                return;
+            }
+
+
+            var tableHTML = "<h3>Tabuada do " + numInput + "</h3><table border='1'><tr><th>Número</th><th>Resultado</th></tr>";
+
+
+            for (var i = 1; i <= 10; i++) {
+                tableHTML += "<tr><td>" + numInput + " x " + i + "</td><td>" + (numInput * i) + "</td></tr>";
+            }
+
+
+            tableHTML += "</table>";
+            tabuadaDiv.innerHTML = tableHTML;
+        }
+    </script>
+
+    <footer>
+        <p>desenvolvido por <cite>entonyKwame</cite> &copy;&reg;</p>
+    </footer>
+</body>
+
+</html>
